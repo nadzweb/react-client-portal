@@ -1,5 +1,11 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  font-size: .875rem;
 }
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
