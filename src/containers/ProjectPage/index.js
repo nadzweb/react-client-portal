@@ -5,7 +5,13 @@ import * as actions from '../../statemanager/actions/project';
 import {connect} from 'react-redux';
 
 class ProjectPage extends Component {
+  state = {
+    title: 'Project page'
+  }
+
   componentWillMount() {
+    console.log(this.props, this.state);
+    this.setState({ title: 'hello'});
     this.props.actions.getProjects();
   }
 
@@ -13,6 +19,7 @@ class ProjectPage extends Component {
     const {projects, actions} = this.props;
     return (
       <div className="home mt-5">
+        <h5>Projects</h5>
         <ProjectList projects={projects} compare={actions.compare}/>
       </div>
     )

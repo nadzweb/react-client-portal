@@ -1,7 +1,41 @@
 import React, { Component } from 'react';
-import {Route, Switch, Link} from 'react-router-dom';
+import {NavLink } from 'react-router-dom';
+import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
+const setTitle = (title) => {
+  console.log(title);
+};
+class LeftNav extends Component {
+  
+  
+  render() {
+    return (
+      <div>
+        <NavLink className="nav-link" activeClassName="active" to="/" isActive={setTitle('Home')}>
+          <ListItem button>
+            <ListItemIcon>
+              <i className="material-icons">home</i>
+            </ListItemIcon>
+            <ListItemText primary="Inbox" />
+          </ListItem>
+        </NavLink>
+        <NavLink className="nav-link" activeClassName="active" to="/projects" isActive={setTitle('Projects')}>
+          <ListItem button>
+            <ListItemIcon>
+              <i className="material-icons">list</i>
+            </ListItemIcon>
+            <ListItemText primary="Projects" />
+          </ListItem>
+        </NavLink>
+      </div>
+    );
+  }
+}
 
-import { ProjectPage } from './../../containers/index';
+export default LeftNav;
+
+/**
+ * import React, { Component } from 'react';
+import {NavLink } from 'react-router-dom';
 import './LeftNav.css';
 
 class LeftNav extends Component {
@@ -11,37 +45,13 @@ class LeftNav extends Component {
           <div className="sidebar-sticky">
             <ul className="nav flex-column">
               <li className="nav-item">
-                <a className="nav-link active" href="#">
-                  <span data-feather="home"></span>
-                  Dashboard <span className="sr-only">(current)</span>
-                </a>
+                <NavLink className="nav-link" activeClassName="active" to="/dashboard">Dashboard</NavLink>
               </li>
               <li className="nav-item">
-              <Link className="nav-link" to="/projects">Projects</Link>
+                <NavLink className="nav-link" activeClassName="active" to="/projects">Projects</NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                  Products
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  <span data-feather="users"></span>
-                  Customers
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  <span data-feather="bar-chart-2"></span>
-                  Reports
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  <span data-feather="layers"></span>
-                  Integrations
-                </a>
+                <NavLink className="nav-link" activeClassName="active" to="/profile">Profile</NavLink>
               </li>
             </ul>            
           </div>
@@ -51,3 +61,4 @@ class LeftNav extends Component {
 }
 
 export default LeftNav;
+**/
